@@ -1,0 +1,97 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+header h1 {
+  font-size: 50px;
+  font-family: 'Caveat', cursive;
+}
+
+.header {
+  height: 45px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.contents-row {
+  width: 800px;
+  margin: 60px auto 0;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+}
+
+.container {
+  padding: 40px 200px;
+  height: 500px;
+  background-color: lightgray;
+  h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: white;
+  }
+}
+
+.new-user {
+
+}
+
+.field input[type="text"], .field input[type="email"], .field input[type="password"] {  
+  border-style: none;
+  box-sizing: border-box;
+  width: 400px;
+  height: 60px;
+  border: none;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 0 7px;
+  margin-bottom: 10px;
+}
+
+.actions input[type="submit"] {
+  margin-top: 10px;
+  border: none;
+  padding: 15px;
+  background-color: #C2EEFF;
+}
+
+.user-show {
+  display: flex;
+  justify-content: space-around;
+  background-color: #DCDCDC;
+  padding: 20px;
+}
+
+.user-right {
+  width:40%;
+}
+
+.user-image {
+  width:300px;
+  height: auto;
+}
+
+.user-name {
+  font-size: 45px;
+  font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  color: #8EB8FF;
+}
+
+.user-email {
+  font-size: 11px;
+  margin-bottom: 30px;
+  color: #8EB8FF;
+}
+
+.user-text {
+  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  margin-bottom: 30px;
+  color: #333333;
+}
+
+.user-edit {
+}
