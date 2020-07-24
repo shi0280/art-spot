@@ -11,7 +11,7 @@
 ### Association
 - has_many :users_spots
 - has_many :spots,  through:  :users_spots
-- has_many :tweets
+- has_many :posts
 - has_many :favorites
 
 ## spotsテーブル
@@ -22,7 +22,7 @@
 ### Association
 - has_many :users_spots
 - has_many :users,  through:  :users_spots
-- has_many :tweets
+- has_many :posts
 
 ## users_spotsテーブル
 |Column|Type|Options|
@@ -33,13 +33,13 @@
 - belongs_to :user
 - belongs_to :spot
 
-## tweetsテーブル
+## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text|null: false|
 |text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|spot_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :spot
@@ -48,7 +48,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|tweet_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :tweet
+- belongs_to :post
