@@ -1,8 +1,8 @@
 <div class="contents row">
   <div class="container">
-    <h2>Log in</h2>
+    <h2>ログイン</h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "new-user" }) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
