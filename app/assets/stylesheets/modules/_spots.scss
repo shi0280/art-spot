@@ -1,0 +1,41 @@
+.img {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #DCDCDC;
+  padding: 20px;
+}
+
+.spot1-image {
+  width: auto;
+  height: 400px;
+  opacity: 70%;
+}
+
+.spot2-image {
+  width: auto;
+  height: 200px;
+  opacity: 70%;
+}
+
+.spot-show {
+  display: flex;
+  justify-content: space-around;
+  background-color: #DCDCDC;
+  padding: 20px;
+}
+
+.spot-right {
+  width:40%;
+}
+
+.spot-image {
+  width:300px;
+  height: auto;
+}
+
+.spot-name {
+  font-size: 45px;
+  font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  color: #8EB8FF;
+}

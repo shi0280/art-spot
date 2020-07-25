@@ -17,8 +17,8 @@
 ## spotsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text|null: false|
-|name|string|null: false, unique: true|
+|image|string||
+|name|string||
 ### Association
 - has_many :users_spots
 - has_many :users,  through:  :users_spots
@@ -36,10 +36,11 @@
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text|null: false|
-|text|text|null: false|
+|title|string|null: false|
+|image|string|null: false|
+|text|text||
 |user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
+|spot_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :spot
