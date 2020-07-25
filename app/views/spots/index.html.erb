@@ -1,0 +1,16 @@
+<div class="img">
+  <div class ="spot-img">
+    <%= image_tag 'kurematisu.jpg', class: "spot1-image" %>
+  </div>
+  <div class ="spot-img">
+    <%= image_tag 'kotori.jpg', class: "spot2-image" %>
+  </div>
+</div>
+
+
+<div class="area"> 
+ <h2>地域</h2>
+  <% @spots.each do |spot| %>
+    <%=link_to spot.name, spot_path(spot) %>
+  <% end %>
+</div>
