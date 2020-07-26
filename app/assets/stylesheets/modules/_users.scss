@@ -71,8 +71,9 @@ header h1 {
 }
 
 .user-image {
-  width:300px;
-  height: auto;
+  width:270px;
+  height:210px;
+  object-fit: cover;
 }
 
 .user-name {
@@ -95,3 +96,4 @@ header h1 {
 
 .user-edit {
 }
+

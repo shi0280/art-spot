@@ -7,14 +7,23 @@
 }
 
 .spot1-image {
-  width: auto;
-  height: 400px;
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
   opacity: 70%;
 }
 
 .spot2-image {
-  width: auto;
-  height: 200px;
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  opacity: 70%;
+}
+
+.spot3-image {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
   opacity: 70%;
 }
 
@@ -26,16 +35,41 @@
 }
 
 .spot-right {
-  width:40%;
+  width: 40%;
 }
 
 .spot-image {
-  width:300px;
-  height: auto;
+  width:350px;
+  height:230px;
+  object-fit: cover;
 }
 
 .spot-name {
   font-size: 45px;
   font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   color: #8EB8FF;
+}
+
+.post-image {
+  width:300px;
+  height:300px;
+  object-fit: cover;
+  opacity: 70%;
+}
+
+.post-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.post p {
+  font-size: 15px;
+  color: darkgrey;
 }

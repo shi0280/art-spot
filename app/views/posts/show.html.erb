@@ -1,2 +1,19 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="post-show">
+  <div class="post-left">
+    <%= image_tag @post.image.url, class: "post-show-image" %>
+    <p><%= @post.created_at.strftime("%Y年%m月%d日 %H時%M分")  %></p>
+  </div>
+  <div class="post-right">
+    <p><%= @post.title %></p>
+    <p><%= @post.text %></p>
+  </div>
+  <div class="post-edit">
+    <% if @post.user_id == current_user.id %>
+      <%= link_to "編集", edit_spot_post_path(@post.spot.id, @post.id) %>
+      <%= link_to "削除", spot_post_path(@post.spot.id, @post.id), method: :delete %>
+    <% end %>
+      <%= link_to "投稿一覧", spot_path(@post.spot.id) %>
+  </div>
+
+</div>
+

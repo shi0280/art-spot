@@ -1,0 +1,12 @@
+.post-show {
+  display: flex;
+  justify-content: space-around;
+  background-color: #DCDCDC;
+  padding: 20px;
+}
+
+.post-show-image {
+  width: 500px;
+  height: 450px;
+  object-fit: cover;
+}

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_group
 
   def new
@@ -18,12 +19,15 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if @post.user != current_user 
+      redirect_to root_path, alert: 'アクセスできません。'
+    end
   end
 
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to spot_path(@spot), notice: '投稿が更新されました'
+      redirect_to spot_post_path(@spot, @post), notice: '投稿が更新されました'
     else
       @posts = @spot.posts.includes(:user)
       render :edit
