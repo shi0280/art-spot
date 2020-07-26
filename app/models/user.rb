@@ -6,8 +6,13 @@ class User < ApplicationRecord
   has_many :spot_users
   has_many :spots, through: :spot_users
   has_many :posts
+  has_many :favorites, dependent: :destroy
          
   validates :name, presence: true, uniqueness: true
 
   mount_uploader :image, ImageUploader
+
+  def already_favorited?(post)
+    self.favorites.exists?(post_id: post.id)
+  end
 end
