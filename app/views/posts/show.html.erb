@@ -13,6 +13,16 @@
       <%= link_to "削除", spot_post_path(@post.spot.id, @post.id), method: :delete %>
     <% end %>
       <%= link_to "投稿一覧", spot_path(@post.spot.id) %>
+    <% if current_user.already_favorited?(@post) %>
+      <%= link_to spot_post_favorites_path(@post.spot.id, @post.id), method: :delete do %>
+       <i class="fas fa-heart"></i>
+      <% end %>
+    <% else %>
+      <%= link_to spot_post_favorites_path(@post.spot.id, @post.id), method: :post do %>
+        <i class="far fa-heart"></i>
+      <% end %>
+    <% end %>
+    <%= @post.favorites.count %>
   </div>
 
 </div>
