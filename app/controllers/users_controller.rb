@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
+   before_action :authenticate_user!, except: [:index]
   def show
     @user = User.find(params[:id])
   end
 
   def edit
     @user = User.find(params[:id])
+    if @user != current_user 
+      redirect_to root_path, alert: 'アクセスできません。'
+    end
   end
 
   def update

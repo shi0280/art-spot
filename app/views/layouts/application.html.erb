@@ -22,6 +22,12 @@
       </div>
     <% end %>
 
+    <% if flash.now[:alert] %>
+      <div class ="alert-box">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
     <header>
       <h1>ArtSpot</h1>
       <div class="header">
