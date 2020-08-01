@@ -4,7 +4,7 @@
 
     <%= form_with(model:[@spot, @post]) do |form| %>
       <div class="field">
-        <%= form.text_field :title %>
+        <%= form.text_field :title, placeholder: "spot"  %>
       </div>
 
       <div class="field">
@@ -12,7 +12,7 @@
       </div>
 
       <div class="field">
-        <%= form.text_field :text %>
+        <%= form.text_field :text, placeholder: "comment" %>
       </div>
 
       <div class="actions">

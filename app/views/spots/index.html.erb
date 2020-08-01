@@ -12,8 +12,75 @@
 
 
 <div class="area"> 
- <h2>地域</h2>
-  <% @spots.each do |spot| %>
-    <%=link_to spot.name, spot_path(spot) %>
-  <% end %>
+  <h2>エリアからスポットを探す・投稿する</h2>
+  <div class="area-box">
+    <div class="area-index">
+      <div class="area-left">
+        <ul>
+          <li class="area-h3">
+            <h3>北海道・東北</h3>
+            <span>+</span>
+              <% @spots1.each do |spot| %>
+                <p class="area-p"><%=link_to spot.name, spot_path(spot) %></p>
+              <% end %>
+          </li>
+          <li class="area-h3">
+            <h3>関東</h3>
+            <span>+</span>
+              <% @spots2.each do |spot| %>
+                <p class="area-p"><%=link_to spot.name, spot_path(spot) %></p>
+              <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="area-center">
+        <ul>
+          <li class="area-h3">
+            <h3>中部</h3>
+            <span>+</span>
+              <% @spots1.each do |spot| %>
+                <p class="area-p"><%=link_to spot.name, spot_path(spot) %></p>
+              <% end %>
+          </li>
+          <li class="area-h3">
+            <h3>関西</h3>
+            <span>+</span>
+              <% @spots1.each do |spot| %>
+                <p class="area-p"><%=link_to spot.name, spot_path(spot) %></p>
+              <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="area-right">
+        <ul>
+          <li class="area-h3">
+            <h3>中国・四国</h3>
+            <span>+</span>
+              <% @spots2.each do |spot| %>
+                <p class="area-p"><%=link_to spot.name, spot_path(spot) %></p>
+              <% end %>
+          </li>
+          <li class="area-h3">
+            <h3>九州・沖縄</h3>
+            <span>+</span>
+              <% @spots1.each do |spot| %>
+                <p class="area-p"><%=link_to spot.name, spot_path(spot) %></p>
+              <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class ="spot-img">
+      <%= image_tag 'unnamed.jpg', class: "spot-image2" %>
+    </div> 
+  </div>
 </div>
+
+<%# 後で削除 %>
+<%# <div class="container">
+  <%= form_for :post, url: '/spots'  do |f| %>
+    <%# <%= f.text_field :name %>
+    <%# <%= f.file_field :image %>
+    <%# <%= f.submit "SEND" %> 
+  <%# <% end %> 
+<%# </div> %> 

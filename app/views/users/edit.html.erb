@@ -5,7 +5,7 @@
     <%= form_for @user do |f| %>
       <div class="field">
         <%= f.label :name %><br />
-        <%= f.text_field :name %>
+        <%= f.text_field :name , placeholder: "name" %>
       </div>
 
       <div class="field">
@@ -14,13 +14,13 @@
       </div>
 
       <div class="field">
-        <%= f.label :text %><br />
-        <%= f.text_field :text %>
+        <%= f.label :profile %><br />
+        <%= f.text_field :text, placeholder: "profile"  %>
       </div>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email %>
+        <%= f.email_field :email, placeholder: "email" %>
       </div>
 
       <div class="actions">

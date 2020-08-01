@@ -6,7 +6,8 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
   </head>
 
   <body>
@@ -22,23 +23,19 @@
       </div>
     <% end %>
 
-    <% if flash.now[:alert] %>
-      <div class ="alert-box">
-        <p class="alert"><%= alert %></p>
-      </div>
-    <% end %>
-
     <header>
       <h1>ArtSpot</h1>
       <div class="header">
-        <%= link_to "Home", root_path %>
-        <% if user_signed_in?%>
-          <%= link_to "マイページ", user_path(current_user.id) %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "ログイン", new_user_session_path %>
-          <%= link_to "新規登録", new_user_registration_path %>
-        <% end %>
+        <ul class="header-bar">
+         <li><%= link_to "Home", root_path %></li>
+          <% if user_signed_in?%>
+            <li><%= link_to "マイページ", user_path(current_user.id) %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+            <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <% end %>
+        </ul>
       </div>
     </header>
 

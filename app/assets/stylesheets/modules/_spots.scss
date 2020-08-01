@@ -6,23 +6,9 @@
   padding: 20px;
 }
 
-.spot1-image {
+.spot1-image,.spot2-image,.spot3-image {
   width: 400px;
-  height: 250px;
-  object-fit: cover;
-  opacity: 70%;
-}
-
-.spot2-image {
-  width: 400px;
-  height: 250px;
-  object-fit: cover;
-  opacity: 70%;
-}
-
-.spot3-image {
-  width: 400px;
-  height: 250px;
+  height: 300px;
   object-fit: cover;
   opacity: 70%;
 }
@@ -39,9 +25,60 @@
 }
 
 .spot-image {
-  width:350px;
-  height:230px;
+  width:300px;
+  height:240px;
   object-fit: cover;
+}
+
+.area {
+  color: #333333
+}
+
+.area-box {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.area h2 {
+  margin-top: 100px;
+  padding: 20px 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.spot-image2 {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 3%;
+  margin-left: 100px;
+}
+
+.area-index {
+  display: flex;
+  justify-content: start;
+  padding: 20px;
+  margin-left: 20px;
+  width: 60%;
+  background-color: #F3FFD8;
+}
+
+.area-left,.area-center,.area-right {
+  width: 250px;
+  margin-right: 40px;
+}
+
+.area-index h3 {
+  font-size: 17px;
+  border-bottom: 1px dotted #333333 ;
+  font-weight: bold;
+  margin-top: 5px;
+  cursor:pointer;
+}
+
+.area-index span {
+  cursor:pointer;
 }
 
 .spot-name {
@@ -72,4 +109,8 @@
 .post p {
   font-size: 15px;
   color: darkgrey;
+}
+
+.area-p {
+  display: none;
 }
