@@ -16,6 +16,7 @@ $(function() {
       let html = `<div class="comment-box">
                     <p class="comment-name"> ${comment.user_name} </p>
                     <p class="comment-text"> ${comment.text} </p>
+                    <p class="comment-created_at"> ${comment.created_at}</p>
                   </div>`
       return html;
     }
