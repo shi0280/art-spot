@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  def create 
+  def create
     @comment = Comment.create(comment_params)
     respond_to do |format|
       format.html { redirect_back fallback_location: root_path }
