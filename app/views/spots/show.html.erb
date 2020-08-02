@@ -19,19 +19,23 @@
       <%= link_to spot_post_path(post.spot.id, post.id) do %>
         <%= image_tag post.image.url, class: "post-image" %>
       <% end %>
-      <%= link_to user_path(post.user.id) do %>
-       <p><%= post.user.name %></p>
-      <% end %>
-      <% if current_user.already_favorited?(post) %>
-        <%= link_to spot_post_favorites_path(post.spot.id, post.id), method: :delete do %>
-           <i class="fas fa-heart"></i>
+      <div class="icons">
+        <%= link_to user_path(post.user.id) do %>
+        <h5><%= post.user.name %></h5>
         <% end %>
-      <% else %>
-        <%= link_to spot_post_favorites_path(post.spot.id, post.id), method: :post do %>
-          <i class="far fa-heart"></i>
+        <% if current_user.already_favorited?(post) %>
+          <%= link_to spot_post_favorites_path(post.spot.id, post.id), method: :delete do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to spot_post_favorites_path(post.spot.id, post.id), method: :post do %>
+            <i class="far fa-heart"></i>
+          <% end %>
         <% end %>
-      <% end %>
-      <%= post.favorites.count %>
+        <p><%= post.favorites.count %></p>
+        <i class="fas fa-comment fa-fw fa-lg "></i>
+        <p><%= post.comments.count %></p>
+      </div>
     </div>
   <% end %>
 </div>

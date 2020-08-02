@@ -1,29 +1,53 @@
-<div class="post-show">
-  <div class="post-left">
-    <%= image_tag @post.image.url, class: "post-show-image" %>
-    <p><%= @post.created_at.strftime("%Y年%m月%d日 %H時%M分")  %></p>
+<div class="post-index">
+  <div class="post-show">
+    <div class="post-left">
+      <%= image_tag @post.image.url, class: "post-show-image" %>
+      <p><%= @post.created_at.strftime("%Y年%m月%d日 %H時%M分")  %></p>
+    </div>
+    <div class="post-edit">
+      <ul class="post-nav">
+        <% if @post.user_id == current_user.id %>
+          <li><%= link_to "編集", edit_spot_post_path(@post.spot.id, @post.id) %></li>
+          <li id="delete"><%= link_to "削除", spot_post_path(@post.spot.id, @post.id), method: :delete %></li>
+        <% end %>
+        <% if current_user.already_favorited?(@post) %>
+          <%= link_to spot_post_favorites_path(@post.spot.id, @post.id), method: :delete do %>
+          <li class="icons"><i class="fas fa-heart"></i></li>
+        <% end %>
+        <% else %>
+          <%= link_to spot_post_favorites_path(@post.spot.id, @post.id), method: :post do %>
+            <li class="icons"><i class="far fa-heart"></i></li>
+          <% end %>
+       <% end %>
+       <li class="icons"><%= @post.favorites.count %></li>
+       <li class="icons"><i class="fas fa-comment fa-fw fa-lg "></i></li>
+       <li class="icons"><%= @post.comments.count %></li>
+      </ul>
+    </div>
   </div>
-  <div class="post-right">
-    <p><%= @post.title %></p>
-    <p><%= @post.text %></p>
-  </div>
-  <div class="post-edit">
-    <% if @post.user_id == current_user.id %>
-      <%= link_to "編集", edit_spot_post_path(@post.spot.id, @post.id) %>
-      <%= link_to "削除", spot_post_path(@post.spot.id, @post.id), method: :delete %>
-    <% end %>
-      <%= link_to "投稿一覧", spot_path(@post.spot.id) %>
-    <% if current_user.already_favorited?(@post) %>
-      <%= link_to spot_post_favorites_path(@post.spot.id, @post.id), method: :delete do %>
-       <i class="fas fa-heart"></i>
+  <div class="post-right">  
+    <p class="post-title"><%= @post.title %></p>
+    <p class="post-text"><%= @post.text %></p>
+    <%= link_to "投稿一覧へ", spot_path(@post.spot.id) %>
+    <div class="comment-form-box">
+      <%= form_with model: [@spot, @post, @comment], local: true, id:"new-comment" do |form| %>
+        <%= form.text_area :text, class: "comment-form", placeholder: "この写真にコメントする", rows: "2" %>
+        <%= form.submit "SEND", class: "comment-submit" %>
       <% end %>
-    <% else %>
-      <%= link_to spot_post_favorites_path(@post.spot.id, @post.id), method: :post do %>
-        <i class="far fa-heart"></i>
-      <% end %>
-    <% end %>
-    <%= @post.favorites.count %>
+    </div>
   </div>
-
 </div>
+
+
+<div class="comments">
+  <h4 class="comment-index">コメント一覧</h4>
+  <%# <span>+</span> %>
+  <% @comments.each do |comment| %>
+    <div class="comment-box">
+      <p class="comment-name"> <%= comment.user.name %> </p>
+      <p class="comment-text"> <%= comment.text %> </p>
+    </div>
+  <% end %>
+</div>
+
 

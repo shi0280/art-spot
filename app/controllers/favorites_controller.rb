@@ -2,6 +2,9 @@ class FavoritesController < ApplicationController
   def create
     @favorite = current_user.favorites.create(post_id: params[:post_id])
     redirect_back(fallback_location: root_path)
+    # respond_to do |format|
+    #   format.js { redirect_back(fallback_location: root_path) }
+    # end
   end
 
   def destroy
@@ -9,5 +12,8 @@ class FavoritesController < ApplicationController
     @favorite = current_user.favorites.find_by(post_id: @post.id)
     @favorite.destroy
     redirect_back(fallback_location: root_path)
+    # respond_to do |format|
+    #   format.js { redirect_back(fallback_location: root_path) }
+    # end
   end
 end

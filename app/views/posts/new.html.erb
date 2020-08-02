@@ -2,9 +2,9 @@
   <div class="container">
     <h2 class>新規登録</h2>
 
-    <%= form_with(model:[@spot, @post]) do |form| %>
+    <%= form_with model:[@spot, @post], local: true do |form| %>
       <div class="field">
-        <%= form.text_field :title %>
+        <%= form.text_field :title, placeholder: "spot"  %>
       </div>
 
       <div class="field">
@@ -12,7 +12,7 @@
       </div>
 
       <div class="field">
-        <%= form.text_field :text %>
+        <%= form.text_field :text, placeholder: "comment" %>
       </div>
 
       <div class="actions">
