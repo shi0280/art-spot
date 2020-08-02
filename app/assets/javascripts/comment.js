@@ -35,6 +35,7 @@ $(function() {
       console.log(data)
       let html = buildHTML(data);
       $('.comments').append(html);
+      $('.comments').animate({ scrollTop: $('.comments')[0].scrollHeight});
       $('.comment-form').val('');
       $('.comment-submit').prop('disabled', false);
     })

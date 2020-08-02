@@ -12,16 +12,16 @@
         <% end %>
         <% if current_user.already_favorited?(@post) %>
           <%= link_to spot_post_favorites_path(@post.spot.id, @post.id), method: :delete do %>
-          <li class="icons" id="hearet-icon1">><i class="fas fa-heart"></i></li>
+          <li class="icons"><i class="fas fa-heart"></i></li>
         <% end %>
         <% else %>
           <%= link_to spot_post_favorites_path(@post.spot.id, @post.id), method: :post do %>
-            <li class="icons" id="hearet-icon2">><i class="far fa-heart"></i></li>
+            <li class="icons"><i class="far fa-heart"></i></li>
           <% end %>
        <% end %>
-       <li class="icons" id="favorite-count"><%= @post.favorites.count %></li>
+       <li class="icons"><%= @post.favorites.count %></li>
        <li class="icons"><i class="fas fa-comment fa-fw fa-lg "></i></li>
-       <li class="icons" id="comment-count"><%= @post.comments.count %></li>
+       <li class="icons"><%= @post.comments.count %></li>
       </ul>
     </div>
   </div>
