@@ -12,14 +12,16 @@
         <% end %>
         <% if current_user.already_favorited?(@post) %>
           <%= link_to spot_post_favorites_path(@post.spot.id, @post.id), method: :delete do %>
-          <li><i class="fas fa-heart"></i></li>
+          <li class="icons"><i class="fas fa-heart"></i></li>
         <% end %>
         <% else %>
           <%= link_to spot_post_favorites_path(@post.spot.id, @post.id), method: :post do %>
-            <li><i class="far fa-heart"></i></li>
+            <li class="icons"><i class="far fa-heart"></i></li>
           <% end %>
        <% end %>
-       <li><%= @post.favorites.count %></li>
+       <li class="icons"><%= @post.favorites.count %></li>
+       <li class="icons"><i class="fas fa-comment fa-fw fa-lg "></i></li>
+       <li class="icons"><%= @post.comments.count %></li>
       </ul>
     </div>
   </div>
@@ -28,7 +30,7 @@
     <p class="post-text"><%= @post.text %></p>
     <%= link_to "投稿一覧へ", spot_path(@post.spot.id) %>
     <div class="comment-form-box">
-      <%= form_with model: [@spot, @post, @comment]  do |form| %>
+      <%= form_with model: [@spot, @post, @comment], local: true, id:"new-comment" do |form| %>
         <%= form.text_area :text, class: "comment-form", placeholder: "この写真にコメントする", rows: "2" %>
         <%= form.submit "SEND", class: "comment-submit" %>
       <% end %>
