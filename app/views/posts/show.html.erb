@@ -21,7 +21,7 @@
        <% end %>
        <li class="icons"><%= @post.favorites.count %></li>
        <li class="icons"><i class="fas fa-comment fa-fw fa-lg "></i></li>
-       <li class="icons"><%= @post.comments.count %></li>
+       <li class="icons" id="comment-count"><%= @post.comments.count %></li>
       </ul>
     </div>
   </div>
@@ -31,7 +31,7 @@
     <%= link_to "投稿一覧へ", spot_path(@post.spot.id) %>
     <div class="comment-form-box">
       <%= form_with model: [@spot, @post, @comment], local: true, id:"new-comment" do |form| %>
-        <%= form.text_area :text, class: "comment-form", placeholder: "この写真にコメントする", rows: "2" %>
+        <%= form.text_area :text, class: "comment-form", placeholder: "コメントする", rows: "2" %>
         <%= form.submit "SEND", class: "comment-submit" %>
       <% end %>
     </div>

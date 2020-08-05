@@ -36,6 +36,7 @@ $(function() {
       console.log(data)
       let html = buildHTML(data);
       $('.comments').append(html);
+      // $('#comment-count').html(`<li><%= ${post.comments.counts} %></li>`)
       $('.comments').animate({ scrollTop: $('.comments')[0].scrollHeight});
       $('.comment-form').val('');
       $('.comment-submit').prop('disabled', false);
