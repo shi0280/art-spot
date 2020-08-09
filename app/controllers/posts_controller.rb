@@ -53,7 +53,7 @@ class PostsController < ApplicationController
       format.json
     end
   end
-
+  
   private
 
   def post_params
