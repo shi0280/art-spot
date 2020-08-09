@@ -16,6 +16,7 @@ $(function() {
       let html = `<div class="comment-box">
                     <p class="comment-name"> ${comment.user_name} </p>
                     <p class="comment-text"> ${comment.text} </p>
+                    <p class="comment-created_at"> ${comment.created_at}</p>
                   </div>`
       return html;
     }
@@ -35,6 +36,7 @@ $(function() {
       console.log(data)
       let html = buildHTML(data);
       $('.comments').append(html);
+      // $('#comment-count').html(`<p id="comment-count">${post.comments.count}</p>`);
       $('.comments').animate({ scrollTop: $('.comments')[0].scrollHeight});
       $('.comment-form').val('');
       $('.comment-submit').prop('disabled', false);

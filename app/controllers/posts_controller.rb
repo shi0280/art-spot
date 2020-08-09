@@ -46,6 +46,14 @@ class PostsController < ApplicationController
     redirect_to spot_path(@spot), notice: '投稿が削除されました'
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+  
   private
 
   def post_params
