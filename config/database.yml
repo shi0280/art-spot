@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: art_spot_production
-  username: art_spot
-  password: <%= ENV['ART_SPOT_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
