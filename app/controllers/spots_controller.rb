@@ -1,7 +1,7 @@
 class SpotsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
-    @spots1 = Spot.find(1,11,21,3141,51,61)
+    @spots1 = Spot.find(1,11,21,31,41,51,61)
     @spots2 = Spot.find(71,81,91,101,111,121,131)
     @spots3 = Spot.find(141,151,161,171,181,191,201,211,221)
     @spots4 = Spot.find(231,241,251,261,271,281,291)
