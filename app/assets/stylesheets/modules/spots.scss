@@ -30,6 +30,20 @@
   object-fit: cover;
 }
 
+.spot-link {
+  margin-top: 15px;
+  background-color: #fff;
+  width: 100px;
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+  border: 1px dotted #BDB76B;
+  a {
+    font-weight: bold;
+    color: #BDB76B;
+  }
+}
+
 .area {
   color: #333333
 }
