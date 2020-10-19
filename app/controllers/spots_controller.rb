@@ -1,12 +1,12 @@
 class SpotsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
-    @spots1 = Spot.find(1,11,21,31,41,51,61)
-    @spots2 = Spot.find(71,81,91,101,111,121,131)
-    @spots3 = Spot.find(141,151,161,171,181,191,201,211,221)
-    @spots4 = Spot.find(231,241,251,261,271,281,291)
-    @spots5 = Spot.find(301,311,321,331,341,351,361,371)
-    @spots6 = Spot.find(381,391,401,411,421,431,441,451)
+    @spots1 = Spot.find(1841,1851,1861,1871,1881,1891,1901)
+    @spots2 = Spot.find(1911,1921,1931,1941,1951,1961,1971)
+    @spots3 = Spot.find(1981,1991,2001,2011,2021,2031,2041,2051,2061)
+    @spots4 = Spot.find(2071,2081,2091,2101,2111,2121,2131)
+    @spots5 = Spot.find(2141,2151,2161,2171,2181,2191,2201,2211)
+    @spots6 = Spot.find(2221,2231,2241,2251,2261,2271,2281,2291)
     @spots = Spot.all
     @spot = Spot.new
   end
